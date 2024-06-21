@@ -7,7 +7,7 @@ public class InstructorMenu extends Menu {
     public int displayMenu(User user) {
         System.out.println("Welcome " + user.getUsername());
         System.out.println("1. View Students");
-        return getInput(1);
+        return ConsoleInputs.getInput(1);
     }
     public String getLoginUserMenu() {
         StringBuilder menu = new StringBuilder();

@@ -16,11 +16,10 @@ public class DataManager {
     static public void addUser(User user) {
         users.add(user);
     }
-    static public int getSize(){
-        return users.size();
-    }
 
     static public boolean isUserRegistered(String username) {
+        if(users.isEmpty())
+            return false;
         for (User user : users) {
             if (user.getUsername().equals(username)) {
                 return true;
