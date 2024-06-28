@@ -8,7 +8,7 @@ import java.util.List;
 
 public class Menu {
     private static Menu instance;
-    private final List<Sandwich> menuItems;
+    private final List<Item> menuItems;
     private final List<Addition> additions;
     private Menu() {
         this.menuItems = new ArrayList<>();
@@ -35,11 +35,11 @@ public class Menu {
     }
 
 
-    public void addMenuItem(Sandwich menuItem) {
+    public void addMenuItem(Item menuItem) {
         menuItems.add(menuItem);
     }
 
-    public void removeMenuItem(Sandwich menuItem) {
+    public void removeMenuItem(Item menuItem) {
         menuItems.remove(menuItem);
     }
 
@@ -51,7 +51,7 @@ public class Menu {
         additions.remove(addition);
     }
 
-    public List<Sandwich> getMenuItems() {
+    public List<Item> getMenuItems() {
         return menuItems;
     }
 
@@ -62,7 +62,7 @@ public class Menu {
     public void displayMenu() {
         System.out.println("Menu Items:");
         int i = 1;
-        for (Sandwich menuItem : menuItems) {
+        for (Item menuItem : menuItems) {
             System.out.println(" " +  i + " " +menuItem.getName() + " - $" + menuItem.getCost());
             i++;
         }

@@ -1,21 +1,20 @@
 package System;
 
 import System.Decorators.AdditionDecorator;
-import System.Decorators.BurgerDecorator;
 import System.Items.Addition;
 
 public class Order {
-    private final Sandwich sandwich;
+    private final Item items;
     private boolean hasAdditions = false;
-    public Order(Sandwich sandwich){
-        this.sandwich = sandwich;
+    public Order(Item sandwich){
+        this.items = sandwich;
         if(sandwich instanceof AdditionDecorator) hasAdditions = true;
 
     }
     public double getTotalCost(){
-        double cost = sandwich.getCost();
+        double cost = items.getCost();
         if(hasAdditions){
-            for(Addition addition : ((AdditionDecorator) sandwich).getAdditions()){
+            for(Addition addition : ((AdditionDecorator) items).getAdditions()){
                 cost += addition.getCost();
             }
         }
@@ -26,16 +25,16 @@ public class Order {
         return hasAdditions;
     }
 
-    public Sandwich getSandwich() {
-        return sandwich;
+    public Item getItems() {
+        return items;
     }
     public void printOrder(){
         System.out.println("-------------------------------");
         System.out.println("Your Order");
-        System.out.println("  " + sandwich.getName());
+        System.out.println("  " + items.getName());
         if(hasAdditions){
             boolean first = true;
-            for(Addition addition : ((AdditionDecorator) sandwich).getAdditions()){
+            for(Addition addition : ((AdditionDecorator) items).getAdditions()){
                 if(first){
                     System.out.print("  " + addition.getName() );
                     first = false;

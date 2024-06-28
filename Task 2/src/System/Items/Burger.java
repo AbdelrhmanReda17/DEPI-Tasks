@@ -1,10 +1,10 @@
 package System.Items;
 
-import System.Sandwich;
+import System.Item;
 
-public class Burger implements Sandwich {
-    private String name;
-    private double cost;
+public class Burger implements Item {
+    private final String name;
+    private final double cost;
     public Burger(String name , double cost){
         this.name = name;
         this.cost = cost;

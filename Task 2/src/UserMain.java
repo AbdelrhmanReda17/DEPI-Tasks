@@ -15,16 +15,15 @@ public class UserMain {
             menu.displayMenu();
             int choice = ConsoleInputs.getInput(menu.getMenuItems().size());
             if(choice == 0) break; else if(choice == -1) continue;
-            Sandwich selectedSandwich = menu.getMenuItems().get(choice - 1);
-            System.out.println("You have selected: " + selectedSandwich.getName());
+            Item selectedItem = menu.getMenuItems().get(choice - 1);
+            System.out.println("You have selected: " + selectedItem.getName());
             System.out.println("Do you want to add any additions? (y/n)");
             String needAdditions = ConsoleInputs.getFalseOrTrue();
             if(needAdditions == null || needAdditions.equals("n")){
-                BurgerDecorator burgerDecorator = new BurgerDecorator(selectedSandwich);
+                BurgerDecorator burgerDecorator = new BurgerDecorator(selectedItem);
                 dummyOrder = new Order(burgerDecorator);
                 dummyOrder.printOrder();
                 boolean isFinish = OrderConfirmation(dummyOrder);
-                System.out.println(isFinish);
                 if(isFinish) return;
                 continue;
             }
@@ -34,7 +33,7 @@ public class UserMain {
                 if(additionChoice == null) continue; else if(additionChoice.isEmpty()) break;
                 List<Addition> selectedAdditions = new ArrayList<>();
                 for(int choiceInt : additionChoice)  selectedAdditions.add(menu.getAdditions().get(choiceInt - 1));
-                AdditionDecorator additionDecorator = new AdditionDecorator(selectedSandwich, selectedAdditions);
+                AdditionDecorator additionDecorator = new AdditionDecorator(selectedItem, selectedAdditions);
                 dummyOrder = new Order(additionDecorator);
                 dummyOrder.printOrder();
                 boolean isFinish = OrderConfirmation(dummyOrder);
@@ -45,7 +44,7 @@ public class UserMain {
     public static boolean OrderConfirmation(Order dummyOrder){
         while(true){
             int confirm = ConsoleInputs.confirmOrder();
-            if(confirm == 0) break;
+            if(confirm == 0) return false;
             else if(confirm == 1){
                 generateReceipt.printReceipt(dummyOrder);
                 break;

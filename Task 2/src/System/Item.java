@@ -1,6 +1,6 @@
 package System;
 
-public interface Sandwich {
+public interface Item {
     String getName();
     double getCost();
 }

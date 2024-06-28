@@ -1,20 +1,20 @@
 package System.Decorators;
 
-import System.Sandwich;
+import System.Item;
 
-public class BurgerDecorator implements Sandwich {
-    private final Sandwich sandwich;
+public class BurgerDecorator implements Item {
+    private final Item item;
 
-    public BurgerDecorator(Sandwich burger) {
-        this.sandwich = burger;
+    public BurgerDecorator(Item burger) {
+        this.item = burger;
     }
     @Override
     public String getName() {
-        return sandwich.getName();
+        return item.getName();
     }
 
     @Override
     public double getCost() {
-        return sandwich.getCost();
+        return item.getCost();
     }
 }
