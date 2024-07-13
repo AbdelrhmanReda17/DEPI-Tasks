@@ -13,11 +13,11 @@ public class Storage extends Component {
 
     @Override
     public void operation() {
-        System.out.println("Running a " + super.toString() + " " + this.type + " Storage with " + this.capacity + "GB capacity");
+        System.out.println("Running a " + super.getManufacturer() + " " + this.type + " Storage with " + this.capacity + "GB capacity");
     }
 
     @Override
     public String toString() {
-        return "Storage [Manufacturer: " + super.toString() + "]";
+        return super.getManufacturer() + " Storage";
     }
 }

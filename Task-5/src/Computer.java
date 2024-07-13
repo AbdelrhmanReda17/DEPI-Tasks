@@ -39,10 +39,10 @@ public class Computer {
     @Override
     public String toString() {
         return "PC Configuration:\n" +
-                cpu + "\n" +
-                gpu + "\n" +
-                ram + "\n" +
-                storage + "\n" +
-                powerSupply;
+                " - [GPU: " + gpu + "]\n" +
+                " - [CPU: " + cpu + "]\n" +
+                " - [RAM: " + ram + "]\n" +
+                " - [Storage: " + storage + "]\n" +
+                " - [Power Supply: " + powerSupply + "]";
     }
 }

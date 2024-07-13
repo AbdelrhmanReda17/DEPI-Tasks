@@ -9,11 +9,11 @@ public class CPU extends Component {
 
     @Override
     public void operation() {
-        System.out.println("Running a " + super.toString() + " CPU");
+        System.out.println("Running a " + super.getManufacturer() + " CPU");
     }
 
     @Override
     public String toString() {
-        return "CPU [Manufacturer: " + super.toString() + "]";
+        return super.getManufacturer() + " CPU";
     }
 }

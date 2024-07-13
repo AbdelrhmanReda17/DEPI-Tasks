@@ -11,11 +11,11 @@ public class PowerSupply extends Component {
 
     @Override
     public void operation() {
-        System.out.println("Running a " + super.toString() + " " + this.wattage + "Wattage Power Supply");
+        System.out.println("Running a " + super.getManufacturer() + " Power Supply with " + this.wattage + "W");
     }
 
     @Override
     public String toString() {
-        return "Power Supply [Manufacturer: " + super.toString() + "]";
+        return super.getManufacturer() + " Power Supply";
     }
 }

@@ -12,7 +12,7 @@ public class Main {
         Component ram = new RAM(dellManufacturer , "DDR4" , 16);
         Component storage = new Storage(hpManufacturer , "SSD" , 500);
         Component powerSupply = new PowerSupply(dellManufacturer , 500);
-        
+
         Computer customComputer = computerBuilder
                 .setCpu(cpu)
                 .setGpu(gpu)

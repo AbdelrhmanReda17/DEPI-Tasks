@@ -13,11 +13,11 @@ public class RAM extends Component {
 
     @Override
     public void operation() {
-        System.out.println("Running a " + super.toString() + " " + this.type + " RAM with " + this.capacity + "GB capacity");
+        System.out.println("Running a " + super.getManufacturer() + " " + this.type + " RAM with " + this.capacity + "GB capacity");
     }
 
     @Override
     public String toString() {
-        return "RAM [Manufacturer: " + super.toString() + "]";
+        return super.getManufacturer() + " RAM";
     }
 }

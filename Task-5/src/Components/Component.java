@@ -9,8 +9,7 @@ public abstract class Component {
         this.manufacturer = manufacturer;
     }
 
-    @Override
-    public String toString() {
-        return manufacturer.toString();
+    public Manufacturer getManufacturer() {
+        return manufacturer;
     }
 }

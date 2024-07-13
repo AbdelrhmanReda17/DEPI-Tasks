@@ -9,11 +9,11 @@ public class GPU extends Component {
 
     @Override
     public void operation() {
-        System.out.println("Running a " + super.toString() + " GPU");
+        System.out.println("Running a " + super.getManufacturer() + " GPU");
     }
 
     @Override
     public String toString() {
-        return "GPU [Manufacturer: " + super.toString() + "]";
+        return super.getManufacturer() + " GPU";
     }
 }

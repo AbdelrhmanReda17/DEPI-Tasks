@@ -1,7 +1,7 @@
 import Components.*;
 
 public class ComputerBuilder {
-    private Computer computer;
+    private final Computer computer;
     public ComputerBuilder() {
         computer = new Computer();
     }
