@@ -3,13 +3,15 @@ package Components;
 import Manufacturer.Manufacturer;
 
 public class CPU extends Component {
-    public CPU(Manufacturer manufacturer) {
+    private final String model;
+    public CPU(Manufacturer manufacturer , String model) {
         super(manufacturer);
+        this.model = model;
     }
 
     @Override
     public void operation() {
-        System.out.println("Running a " + super.getManufacturer() + " CPU");
+        System.out.println("Running a " + super.getManufacturer() + " " + this.model + " CPU");
     }
 
     @Override

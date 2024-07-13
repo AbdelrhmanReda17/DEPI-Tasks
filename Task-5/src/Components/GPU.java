@@ -3,13 +3,15 @@ package Components;
 import Manufacturer.Manufacturer;
 
 public class GPU extends Component {
-    public GPU(Manufacturer manufacturer) {
+    private final String model;
+    public GPU(Manufacturer manufacturer , String model) {
         super(manufacturer);
+        this.model = model;
     }
 
     @Override
     public void operation() {
-        System.out.println("Running a " + super.getManufacturer() + " GPU");
+        System.out.println("Running a " + super.getManufacturer() + " " + this.model + " GPU");
     }
 
     @Override

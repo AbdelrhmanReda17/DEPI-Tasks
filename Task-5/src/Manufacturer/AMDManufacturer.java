@@ -1,8 +1,8 @@
 package Manufacturer;
 
-public class HP_Manufacturer extends Manufacturer {
+public class AMDManufacturer extends Manufacturer {
     @Override
     public String toString() {
-        return "HP";
+        return "AMD";
     }
 }
