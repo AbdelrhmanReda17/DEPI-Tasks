@@ -3,5 +3,5 @@ class Transaction {
   String description;
   String type;
 
-  Transaction(this.amount, this.description, this.type);
+  Transaction({required this.amount,required this.description,required this.type});
 }
