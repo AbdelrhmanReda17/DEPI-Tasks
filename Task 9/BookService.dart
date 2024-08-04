@@ -1,6 +1,6 @@
 import 'Book.dart';
 import 'BookRepository.dart';
-import 'LibraryUtils.dart';
+typedef BookFilter = bool Function(Book book);
 
 class BookService {
   BookRepository repository;
@@ -41,5 +41,11 @@ class BookService {
       default:
         return 'Unknown Status';
     }
+  }
+    
+  void printList(List<Book> books){
+    books.forEach((book) {
+      print('Title: ${book.title}, Author: ${book.author}');
+    });
   }
 }
