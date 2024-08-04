@@ -1,6 +1,6 @@
 import 'Book.dart';
+import 'BookFilterStrategy/BookFilter.dart';
 import 'BookRepository.dart';
-typedef BookFilter = bool Function(Book book);
 
 class BookService {
   BookRepository repository;
